@@ -1048,4 +1048,171 @@ html {
     .whatsapp-tooltip {
         display: none; /* Esconde tooltip em mobile */
     }
+
+    /* ============================================
+   CARD CRT EM DESTAQUE
+   ============================================ */
+.card-crt-destaque {
+    background: linear-gradient(135deg, var(--branco) 0%, var(--bege) 100%);
+    border-radius: 20px;
+    margin: 35px 0;
+    overflow: hidden;
+    box-shadow: var(--sombra-hover);
+    border: 1px solid rgba(20, 39, 198, 0.1);
+    transition: var(--transicao);
+}
+
+.card-crt-destaque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.crt-badge {
+    background: linear-gradient(135deg, var(--azul-dr) 0%, #0a1a8c 100%);
+    padding: 12px 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom-right-radius: 30px;
+}
+
+.crt-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.crt-title {
+    color: var(--branco);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.crt-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    padding: 30px;
+    align-items: center;
+}
+
+.crt-imagem {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    background: var(--cinza-claro);
+}
+
+.crt-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transicao);
+}
+
+.card-crt-destaque:hover .crt-imagem img {
+    transform: scale(1.02);
+}
+
+.crt-efeito {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(20, 39, 198, 0.1) 0%, rgba(255, 153, 0, 0.1) 100%);
+    pointer-events: none;
+}
+
+.crt-info h3 {
+    color: var(--azul-dr);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.crt-info p {
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.crt-info ul {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+}
+
+.crt-info ul li {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.crt-info ul li::before {
+    content: '✓';
+    color: var(--laranja);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.crt-numero {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid var(--laranja);
+    display: inline-block;
+}
+
+.crt-numero span {
+    background: var(--cinza-claro);
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-weight: 600;
+    color: var(--azul-dr);
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+/* Responsividade para card CRT */
+@media (max-width: 768px) {
+    .crt-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .crt-badge {
+        padding: 10px 20px;
+    }
+    
+    .crt-title {
+        font-size: 0.9rem;
+    }
+    
+    .crt-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .crt-info ul li {
+        font-size: 0.85rem;
+    }
+    
+    .crt-numero span {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .crt-content {
+        padding: 15px;
+    }
+    
+    .crt-info h3 {
+        font-size: 1.1rem;
+    }
 }
