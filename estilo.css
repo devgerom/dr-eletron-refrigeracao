@@ -59,14 +59,15 @@ header .container {
     border-radius: 50%;
 }
 
-.img-gree{
+.img-gree {
     display: flex;
-    margin: 0 auto;    
+    margin: 0 auto;
     justify-content: center;
     align-content: center;
     align-items: center
 }
-.img-gree img{
+
+.img-gree img {
     max-width: 150px;
 }
 
@@ -120,10 +121,20 @@ header .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: center;
+    align-items: start; /* mudado de center para start para alinhar no topo */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.tecnico-info h1 {
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .sobre-tecnico .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+.tecnico-info h2 {
     font-size: 2.5rem;
     color: var(--azul-dr);
     margin-bottom: 15px;
@@ -147,6 +158,42 @@ header .container {
     color: #555;
 }
 
+/* Credenciais em destaque */
+.credenciais-destaque {
+    margin: 25px 0;
+}
+
+.credencial-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    transition: var(--transicao);
+}
+
+.credencial-item:hover {
+    background: var(--branco);
+    transform: translateX(5px);
+}
+
+.credencial-icon {
+    font-size: 2rem;
+    min-width: 50px;
+}
+
+.credencial-texto h3 {
+    color: var(--azul-dr);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.credencial-texto p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
 .destaque-experiencia {
     background: linear-gradient(135deg, rgba(20, 39, 198, 0.05) 0%, rgba(255, 153, 0, 0.05) 100%);
     border-left: 4px solid var(--laranja);
@@ -160,27 +207,19 @@ header .container {
     font-weight: 500;
 }
 
-.davita {
+.davita a {
     color: var(--azul-dr);
     font-weight: 700;
     font-size: 1.1rem;
+    text-decoration: none;
 }
 
-.tecnico-imagem {
-    text-align: center;
+.davita a:hover {
+    text-decoration: underline;
 }
 
-.tecnico-imagem img {
-    max-width: 100%;
-    border-radius: 15px;
-    box-shadow: var(--sombra);
-    margin-bottom: 20px;
-}
-
-.carteira-crt img {
-    max-width: 350px;
-    border-radius: 10px;
-    box-shadow: var(--sombra);
+.compromisso {
+    font-style: italic;
 }
 
 /* ============================================
@@ -351,6 +390,10 @@ header .container {
     padding: 60px 0;
     background: var(--branco);
 }
+.cases img{
+    border-radius: 12px;
+    max-width: 100%;
+}
 
 .cases h2 {
     text-align: center;
@@ -463,51 +506,51 @@ footer p:last-child {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .menu {
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
     }
-    
+
     .sobre-tecnico .container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .tecnico-info h1 {
         font-size: 2rem;
     }
-    
+
     .servico-item {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .servico-item:nth-child(even) .servico-imagem {
         order: -1;
     }
-    
+
     .servico-texto h3 {
         font-size: 1.5rem;
     }
-    
+
     .cards-diferenciais {
         grid-template-columns: 1fr;
     }
-    
+
     .case-item {
         padding: 25px;
     }
-    
+
     .cta h2 {
         font-size: 1.5rem;
     }
-    
+
     .cta p {
         font-size: 1rem;
     }
-    
+
     .btn-contato {
         padding: 12px 30px;
         font-size: 1rem;
@@ -518,25 +561,25 @@ footer p:last-child {
     .container {
         padding: 0 15px;
     }
-    
+
     .tecnico-info h1 {
         font-size: 1.8rem;
     }
-    
+
     .badge {
         font-size: 0.8rem;
     }
-    
+
     .servicos-destaque h2,
     .diferenciais h2,
     .cases h2 {
         font-size: 1.8rem;
     }
-    
+
     .card {
         padding: 20px;
     }
-    
+
     .case-info h3 {
         font-size: 1.3rem;
     }
@@ -550,6 +593,7 @@ footer p:last-child {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -592,6 +636,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--laranja);
 }
+
 /* ============================================
    PÁGINA DE CONTATO
    ============================================ */
@@ -855,7 +900,7 @@ html {
     margin-bottom: 15px;
 }
 
-.mapa-regiao > .container > p {
+.mapa-regiao>.container>p {
     color: #666;
     margin-bottom: 30px;
 }
@@ -925,24 +970,24 @@ html {
     .contato-wrapper {
         grid-template-columns: 1fr;
     }
-    
+
     .contato-header h1 {
         font-size: 2rem;
     }
-    
+
     .tecnico-dados h2 {
         font-size: 1.5rem;
     }
-    
+
     .btn-whatsapp-grande {
         font-size: 1rem;
         padding: 12px 25px;
     }
-    
+
     .cta-contato h2 {
         font-size: 1.5rem;
     }
-    
+
     .info-adicional {
         grid-template-columns: 1fr;
     }
@@ -1020,10 +1065,12 @@ html {
         transform: scale(1);
         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
+
     50% {
         transform: scale(1.05);
         box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
@@ -1038,27 +1085,30 @@ html {
         bottom: 20px;
         right: 20px;
     }
-    
+
     .whatsapp-icon {
         width: 30px;
         height: 30px;
     }
-    
+
     .whatsapp-tooltip {
-        display: none; /* Esconde tooltip em mobile */
+        display: none;
+        /* Esconde tooltip em mobile */
     }
 
-    /* ============================================
+  
+/* ============================================
    CARD CRT EM DESTAQUE
    ============================================ */
 .card-crt-destaque {
     background: linear-gradient(135deg, var(--branco) 0%, var(--bege) 100%);
     border-radius: 20px;
-    margin: 35px 0;
     overflow: hidden;
     box-shadow: var(--sombra-hover);
     border: 1px solid rgba(20, 39, 198, 0.1);
     transition: var(--transicao);
+    width: 100%; /* ocupar toda largura disponível */
+    max-width: 100%; /* sem limite máximo */
 }
 
 .card-crt-destaque:hover {
@@ -1077,7 +1127,7 @@ html {
 
 .crt-icon {
     font-size: 1.5rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .crt-title {
@@ -1176,12 +1226,28 @@ html {
     display: inline-block;
 }
 
-/* Responsividade para card CRT */
-@media (max-width: 768px) {
+/* Responsividade para tablet e mobile */
+@media (max-width: 992px) {
     .crt-content {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-tecnico .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .card-crt-destaque {
+        margin-top: 20px;
+    }
+    
+    .crt-content {
         padding: 20px;
+        gap: 20px;
     }
     
     .crt-badge {
@@ -1204,6 +1270,14 @@ html {
         font-size: 0.8rem;
         padding: 6px 12px;
     }
+    
+    .tecnico-info h2 {
+        font-size: 2rem;
+    }
+    
+    .credencial-item {
+        padding: 12px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1213,5 +1287,14 @@ html {
     
     .crt-info h3 {
         font-size: 1.1rem;
+    }
+    
+    .tecnico-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .credencial-icon {
+        font-size: 1.5rem;
+        min-width: 40px;
     }
 }
