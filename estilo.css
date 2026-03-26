@@ -390,6 +390,10 @@ header .container {
     padding: 60px 0;
     background: var(--branco);
 }
+.txt-comentario{
+    font-size: 6px;
+}
+
 .cases img{
     border-radius: 12px;
     max-width: 100%;
@@ -1297,14 +1301,4 @@ html {
         font-size: 1.5rem;
         min-width: 40px;
     }
-}
-.capa{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-
-}
-.capa img{
-    margin: 0 auto;
-    max-width: 400px;
 }
