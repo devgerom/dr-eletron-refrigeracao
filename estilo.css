@@ -1298,3 +1298,13 @@ html {
         min-width: 40px;
     }
 }
+.capa{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+.capa img{
+    margin: 0 auto;
+    max-width: 400px;
+}
